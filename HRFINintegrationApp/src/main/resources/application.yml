@@ -1,0 +1,57 @@
+server:
+  port: 8950
+camel:
+  springboot:
+    name: ServicesRest
+
+lzb:
+  api:
+    path: '/camel'
+    
+########################################################################
+# Equifax route 
+
+equifaxoutboundroute:
+  name: Equifax
+  from:
+    path: http://localhost:9092/employees
+
+  to:
+    path: file:C:/test/?fileName=test.csv
+   
+    
+  url:
+    equifax: http://localhost:9099/hrfinintegrations/equifax/
+    
+  bean:
+    vendorbean:
+      equifax: com.lzb.hr.beans.vendorbeans.Equifax
+     
+    vendorbeanlist:
+      equifax: com.lzb.hr.beans.vendorbeanlist.EquifaxList
+      
+ #######################################################################     
+ 
+ ########################################################################
+# Equifax route 
+
+prudentialoutboundroute:
+  name: Prudential
+  from:
+    path: http://localhost:9092/employees
+
+  to:
+    path: file:C:/test/?fileName=prudential.csv
+   
+    
+  url:
+    prudential: http://localhost:9099/camel/equifax/
+    
+  bean:
+    vendorbean:
+      prudential: com.lzb.hr.beans.vendorbeans.Equifax
+      
+    vendorbeanlist:
+      prudential: com.lzb.hr.beans.vendorbeanlist.EquifaxList
+      
+ #######################################################################    

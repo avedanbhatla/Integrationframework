@@ -1,0 +1,22 @@
+server:
+  port: 8900
+camel:
+  springboot:
+    name: ServicesRest
+
+lzb:
+  api:
+    path: '/hrfinintegrations'
+  
+route: 
+  from:
+    equifax:
+        endpoint: equifax
+        ws1: http://localhost:9092/employees?bridgeEndpoint=true
+        ws2: http4://localhost:9094/employeeBenefits?bridgeEndpoint=true
+        bean1: com.lzb.hr.beans.objectbeanlist.Employees
+        bean2: com.lzb.hr.beans.objectbeanlist.EmployeeBenefitsList
+        vendorBean: com.lzb.hr.beans.vendorbeanlist.EquifaxList
+        
+
+
