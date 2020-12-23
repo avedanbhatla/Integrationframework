@@ -58,6 +58,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.sun.activation</groupId>
+			<artifactId>javax.activation</artifactId>
+			<version>1.2.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.lzb.beans</groupId>
@@ -84,6 +90,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>2.5.0</version>
+				<configuration>
+					<to>
+						<image>avedanbhatla/lzbrepo:employeeBenefitsAPI</image>
+						<auth>
+							<username>avedanbhatla</username>
+							<password>lzbrepo</password>
+						</auth>
+					</to>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
