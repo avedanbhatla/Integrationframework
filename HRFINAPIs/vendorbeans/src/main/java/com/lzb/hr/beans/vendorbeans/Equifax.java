@@ -15,6 +15,8 @@ public class Equifax {
 	String dental;
 	@DataField(pos = 5)
 	String medical;
+	
+	
 	public String getEmpNum() {
 		return empNum;
 	}

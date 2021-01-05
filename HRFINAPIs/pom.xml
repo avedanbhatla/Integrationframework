@@ -37,6 +37,7 @@
   		<module>vendorbeans</module>
 		<module>employee-application</module>
 		<module>employeeBenefits-application</module>
+		<module>department-application</module>
 	</modules>
   
 </project>
