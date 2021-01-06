@@ -29,7 +29,7 @@ public class EmployeeResource {
 	
 	
 	//@GetMapping(path = "/", produces = "application/json")
-	@GetMapping
+	@GetMapping(produces = "application/json")
 	public EmployeeBenefitsList getEmployees(){
 		
 		return employeeDao.getAllEmployees();
